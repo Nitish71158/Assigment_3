@@ -50,7 +50,7 @@ contract changePass{
 
 ## HELP
 
-* address should be same to change the passworda
+* address should be same to change the password
 
 ## Author
 Nitish Kumar Singh
