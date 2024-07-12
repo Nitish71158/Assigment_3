@@ -14,14 +14,16 @@ In this program, we change the password of a user and check for errors using the
 
 * Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with anyname.sol extension (e.g., changePass.sol). Copy and paste the following code into the file:
 
-pragma solidity ^0.8.18;
+```javascript
+
+pragma solidity ^0.8.18;  //Pragma is compiler directive that allows additional information to compiler pragma solidity
 
 contract changePass{
-    string public name="Ramlal";            
-    address public addres=msg.sender;      
-    uint public number=6532145648;        
-    string public pass="@12345678"; 
-    uint public age=20;                 
+    string public name="Ramlal";            //user name
+    address public addres=msg.sender;      //user address
+    uint public number=6532145648;        //user number
+    string public pass="@12345678";      //user password
+    uint public age=20;                 //user age
 
     function information(uint _age, uint _num) view  public returns(address)
     {
@@ -38,15 +40,18 @@ contract changePass{
         return msg.sender;                                                       // return address
     }
 }
+```
 
 * To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar or you can press (ctrl+S) buttom. Make sure the "Compiler" option is set to "0.8.18" or greater than "0.8.18", and then click on the "Compile changePass.sol" button.
 
 * Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "changePass" contract from the dropdown menu, and then click on the "Deploy" button.
 
-* Once the contract is deployed, then you fill the information under information function on left hand side then click on call you function will called.And to check the address , name , number, pass,or age click on name, age , number, pass button. Then go in changePass function onleft hand side which in orange in color then change your password if address match with user and click on call button to change password.
+* Once the contract is deployed, then you fill the information under information function on left hand side then click on call you function will called.And to check the address , name , number, pass,or age click on name, age , number, pass button. Then go in changePass function onleft hand side which is in 'orange' in color then change your password if address match with user and click on call button to change password.
 
 ## HELP
 
 * address should be same to change the passworda
 
-Authors Nitish Kumar Singh nitishsingh71158@gmail.com
+## Author
+Nitish Kumar Singh
+[@Nitish71158](https://github.com/)
