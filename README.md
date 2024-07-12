@@ -1,39 +1,49 @@
-AIM: Do Error Handling By Using require(), assert(), revert().
+CHANGE PASSWORD
+This Solidity program use to demonstrate about error handling in Solidity while changing the password. The purpose of this program is to use require(), assert(),revert() function.
 
-Discription: In this program we change password of a user and check the error by using require(), assert(),revert() function. In this we make contract name as changePass in which we have user name, Old password ,
-address of user and number , and then create a function name as information in which we check user number age becouse to check wether it is user or some one else and then return address of persion, then we 
-create another function name as change and in this we change the pass old to new one and if the user will not done it it will not change password and return address who try to change password.
+Description
+
+In this program, we change the password of a user and check for errors using the require(), assert(), and revert() functions. The contract is named ChangePass, and it includes the user's name, old password, user address, and number. We then create a function named information in which we check the user's age to verify whether it is the user or someone else. This function returns the address of the person. Next, we create another function named change that changes the password from the old one to a new one. If the user does not perform this operation correctly, the password will not be changed, and the address of the person attempting to change the password will be returned.
 
 Getting Started
 
-Executing Program To run this program, you can use Remix, an online Solidity IDE. And run the code.
+*Executing Program To run this program, you can use Remix, an online Solidity IDE. And run the code.
 
-//Pragma is compiler directive that allows additional information to compiler pragma solidity ^0.8.18;
+*Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with anyname.sol extension (e.g., changePass.sol). Copy and paste the following code into the file:
+
+pragma solidity ^0.8.18;
 
 contract changePass{
-    string public name="Ramlal"; // name of user
-    address public addres=msg.sender; // store address of user
-    uint public number=6532145648; // number of user
-    string public pass="@12345678"; //  old password
-    uint public age=20; // age of user
+    string public name="Ramlal";            
+    address public addres=msg.sender;      
+    uint public number=6532145648;        
+    string public pass="@12345678"; 
+    uint public age=20;                 
 
     function information(uint _age, uint _num) view  public returns(address)
     {
-        if(_num!=number) // check wether number is written wrong or write
+        if(_num!=number)             // check wether number is written wrong or write
         {
-            revert("Wrong number Enter This is not a User login number");// if not correct return error
+            revert("Wrong number Enter This is not a User login number");  // if not correct return error
         }
-       assert(_age==age);// checking age 
-       return msg.sender; // return the person address
+       assert(_age==age);       // checking age 
+       return msg.sender;      // return the person address
     }
-
-    function changes(string memory newPass) external returns(address) { // another function for change password
-        pass=newPass; // new password generate
+    function changes(string memory newPass) external returns(address) {     // another function for change password
+        pass=newPass;                                                      // new password generate
         require(addres==msg.sender,"This is not a User  Adress You are Unknown"); // check wether owner is changing address or some one else
-        return msg.sender; // return address
+        return msg.sender;                                                       // return address
     }
-
- 
 }
+
+*To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar or you can press (ctrl+S) buttom. Make sure the "Compiler" option is set to "0.8.18" or greater than "0.8.18", and then click on the "Compile changePass.sol" button.
+
+*Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "changePass" contract from the dropdown menu, and then click on the "Deploy" button.
+
+*Once the contract is deployed, then you fill the information under information function on left hand side then click on call you function will called.And to check the address , name , number, pass,or age click on name, age , number, pass button. Then go in changePass function onleft hand side which in orange in color then change your password if address match with user and click on call button to change password.
+
+HELP
+
+*address should be same to change the passworda
 
 Authors Nitish Kumar Singh nitishsingh71158@gmail.com
